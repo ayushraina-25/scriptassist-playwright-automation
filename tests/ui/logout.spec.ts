@@ -30,5 +30,6 @@ test.describe('UI - Logout', () => {
 
     // Verify redirected to login page
     await expect(page).toHaveURL(/\/login/);
+    await expect(page.locator('//div[contains(text(),"Logged out successfully")]')).toBeVisible();
   });
 });
