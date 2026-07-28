@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test tests/ui",
+    "test:api": "npx playwright test tests/api",
+    "typecheck": "npx tsc --noEmit"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ayushraina-25/scriptassist-playwright-automation.git"
