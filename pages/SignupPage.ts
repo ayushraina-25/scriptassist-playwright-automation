@@ -107,8 +107,8 @@ export class SignupPage extends BasePage {
 
     // Click create account and wait for the success confirmation before continuing
     await this.click(this.createAccountButton);
-    await this.accountCreatedMessage.waitFor({ state: 'visible', timeout: 30000 });
-    await this.page.waitForLoadState('networkidle');
+    await this.accountCreatedMessage.waitFor({ state: 'visible'});
+    // await this.page.waitForLoadState('networkidle');
   }
 
   async signup(

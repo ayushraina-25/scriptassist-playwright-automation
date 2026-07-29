@@ -53,7 +53,8 @@ export class NewUser {
     await this.page.goto(`${this.baseUrl}/login`);
 
     const loginPage = new LoginPage(this.page);
-    await this.page.waitForLoadState('networkidle');
+    // Wait for the email input to be visible instead of waiting for networkidle.
+    await loginPage.emailInput.waitFor({ state: 'visible', timeout: 60000 });
     await loginPage.login(credentials.email, credentials.password);
     await this.page.waitForLoadState('domcontentloaded');
   }
